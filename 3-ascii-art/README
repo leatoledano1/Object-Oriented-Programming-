@@ -1,0 +1,15 @@
+ASCII Art Generator (EX3)
+
+Converts input images into ASCII art in Java with both an algorithm
+module and an interactive command-line shell[cite: 34, 42, 43]. Supports
+custom character sets, resolution scaling, reverse brightness matching,
+and console or HTML output[cite: 34, 42, 47, 48].
+
+Architecture & Packages:
+- image: Image loading, padding to powers of two, sub-image splitting,
+  and grayscale brightness calculation[cite: 36, 37, 40, 41].
+- image_char_matching: SubImgCharMatcher and CharConverter for computing
+  character brightness, linear normalization, and closest brightness lookup[cite: 37, 39, 40].
+- ascii_art: AsciiArtAlgorithm and Shell for running conversions, caching
+  repeated computations, handling exceptions, and processing commands[cite: 37, 41, 43, 44].
+- ascii_output: Provided output exporters (console and out.html)[cite: 38, 48].

@@ -1,1 +1,20 @@
+Simplified Java (s-Java) Verifier (EX5)
 
+A two-pass syntax, scope, and semantic verifier for s-Java source files
+using Java regular expressions and structured validation components.
+
+Main Regexes:
+- Method declaration regex: matches void method signatures, valid method
+  names, optional parameter lists, and opening braces '{' with optional
+  surrounding whitespace.
+- Variable declaration regex: matches optional 'final', valid s-Java types,
+  variable names, optional initializations, comma-separated declarations,
+  and trailing ';'.
+
+Design & Modules:
+- main / Sjavac: CLI argument entry point, execution flow, and exit codes
+  (0 valid, 1 syntax/semantic error, 2 I/O error).
+- Verifier: coordinates two-pass scanning (method collection and full validation).
+- Scope & VarInfo: manage nested scopes, variable visibility, and state.
+- MethodTable, AssignmentValidator, ConditionValidator, LiteralUtils,
+  TypeUtils: handle method registration and type/expression validation.

@@ -1,0 +1,22 @@
+Bricker Game (EX2)
+
+An Arkanoid-style 2D arcade game built in Java using DanoGameLab.
+The player moves a paddle to deflect the ball, break all bricks,
+and manage lives while triggering special brick behaviors.
+
+Architecture & Design:
+- Game Objects (bricker.gameobjects):
+  Ball, PuckBall, Paddle, ExtraPaddle (disappears after 4 hits),
+  Brick, ExtraHeart, and Hearts (UI icons + color-coded counter).
+- Collision Strategies (bricker.brick_strategies):
+  Implemented via CollisionStrategy with access to GameObjectCollection
+  for self-contained object management.
+- Special Behaviors:
+  - BasicCollisionStrategy: Removes the brick and decrements the counter.
+  - AddPucksStrategy: Spawns two smaller, faster PuckBalls in random directions.
+  - ExtraPaddleStrategy: Spawns a temporary center paddle (max one active).
+  - ExplodeNeighborsStrategy: Destroys adjacent bricks with sound effects.
+  - HeartCollisionStrategy: Drops an ExtraHeart that adds a life (up to 4)
+    when caught by the main paddle.
+  - MultipleStrategy: Combines up to 3 strategies on one brick via
+    FactoryOfStrategies whilee preventing infinite nesting.

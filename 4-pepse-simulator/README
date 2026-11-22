@@ -1,0 +1,14 @@
+PEPSE Simulator (EX4)
+
+A procedural 2D world simulation built in Java using DanoGameLab.
+Features a day-night cycle, sun and halo motion, a controllable avatar
+with energy and animations, trees with swaying leaves and fruits, and
+reproducible infinite world generation.
+
+Packages & Modules:
+- pepse: PepseGameManager entry point and game loop orchestration.
+- pepse.utils: ColorSupplier and NoiseGenerator utilities.
+- pepse.world: Sky, Block, Terrain, and world layer setup.
+- pepse.world.daynight: Night opacity transitions and Sun/SunHalo motion.
+- pepse.world.avatar: Avatar movement, jumping, energy, and animations.
+- pepse.world.trees: Flora, static trunks, leaf sway transitions, and fruits.
